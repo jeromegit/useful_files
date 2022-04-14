@@ -11,6 +11,7 @@ gf() { grep  $* | tr "\001" \| | grep "$1"; };
 
 # history
 alias h=history
+hh() { history | grep $* ; }
 
 # less
 alias less='less -X'
