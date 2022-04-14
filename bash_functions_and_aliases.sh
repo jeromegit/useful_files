@@ -1,5 +1,5 @@
 # How to get and source/execute the content of this file:
-alias wguf='wget -q -P ~/.useful_files/ https://raw.githubusercontent.com/jeromegit/useful_files/main/bash_functions_and_aliases.sh ; \
+alias wguf='wget -q -N -O ~/.useful_files/bash_functions_and_aliases.sh https://raw.githubusercontent.com/jeromegit/useful_files/main/bash_functions_and_aliases.sh ; \
 source ~/.useful_files/bash_functions_and_aliases.sh'
 
 # ls the top 40 most recent files
