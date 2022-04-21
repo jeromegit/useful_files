@@ -2,6 +2,10 @@
 alias wguf='mkdir -p ~/.useful_files; wget -q  -N -O ~/.useful_files/bash_functions_and_aliases.sh https://raw.githubusercontent.com/jeromegit/useful_files/main/bash_functions_and_aliases.sh; \
            source ~/.useful_files/bash_functions_and_aliases.sh'
 
+# Environment variables
+export VISUAL="emacs -nw"
+export EDITOR=$VISUAL
+
 # ls the top 40 most recent files
 lh() { /bin/ls --color=tty -lt $@ | head -40 ; }
 
@@ -12,6 +16,14 @@ gf() { grep  $* | tr "\001" \| | grep "$1"; };
 # history
 alias h=history
 hh() { history | grep $* ; }
+alias hg=hh
 
 # less
 alias less='less -X'
+
+# crontab
+alias ve='export VISUAL="emacs -nw"; export EDITOR=$VISUAL'
+alias cte='crontab -e'
+alias ctl='crontab -l'
+alias ctg='crontab -l | grep -i'
+
