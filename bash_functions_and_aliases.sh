@@ -11,11 +11,11 @@ lh() { /bin/ls --color=tty -lt $@ | head -40 ; }
 
 # grep a FIX file it assumes that the first arg is the string to search/grep
 #  gf string_to_search [options such as -i or -v] file(s)
-gf() { grep  $* | tr "\001" \| | grep "$1"; };
+gf() { grep --color=always $* | tr "\001" \| | grep "$1"; };
 
 # history
 alias h=history
-hh() { history | grep $* ; }
+hh() { history | grep --color=always $* ; }
 alias hg=hh
 
 # less
@@ -25,5 +25,7 @@ alias less='less -X'
 alias ve='export VISUAL="emacs -nw"; export EDITOR=$VISUAL'
 alias cte='crontab -e'
 alias ctl='crontab -l'
-alias ctg='crontab -l | grep -i'
+alias ctg='crontab -l | grep --color=always -i'
 
+# Misc
+psgrep() { ps -edf |grep --color=always -i $* ; }
