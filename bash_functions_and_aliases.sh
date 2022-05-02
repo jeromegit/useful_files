@@ -1,5 +1,5 @@
 # How to get and source/execute the content of this file:
-alias wguf='mkdir -p ~/.useful_files; wget -q  -N -O ~/.useful_files/bash_functions_and_aliases.sh https://raw.githubusercontent.com/jeromegit/useful_files/main/bash_functions_and_aliases.sh; \
+alias wguf='wget -q  -N -O ~/.useful_files/bash_functions_and_aliases.sh https://raw.githubusercontent.com/jeromegit/useful_files/main/bash_functions_and_aliases.sh; \
            source ~/.useful_files/bash_functions_and_aliases.sh'
 
 # Environment variables
