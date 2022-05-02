@@ -27,10 +27,11 @@ alias cte='crontab -e'
 alias ctl='crontab -l'
 alias ctg='crontab -l | grep --color=always -i'
 
-# Misc
-psgrep() { ps -edf |grep --color=always -i $* ; }
+# Python/miniconda3
 alias p3='/home/jerome/miniconda3/bin/python3'
 alias p3d='/home/jerome/miniconda3/bin/python3 -mpdb'
 alias ip3='/home/jerome/miniconda3/bin/ipython3'
 
-
+# Misc
+psgrep() { ps -edf |grep --color=always -i $* ; }
+alias enw='emacs -nw'
