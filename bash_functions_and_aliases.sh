@@ -29,3 +29,8 @@ alias ctg='crontab -l | grep --color=always -i'
 
 # Misc
 psgrep() { ps -edf |grep --color=always -i $* ; }
+alias p3='/home/jerome/miniconda3/bin/python3'
+alias p3d='/home/jerome/miniconda3/bin/python3 -mpdb'
+alias ip3='/home/jerome/miniconda3/bin/ipython3'
+
+
