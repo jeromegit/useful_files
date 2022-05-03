@@ -35,3 +35,5 @@ alias ip3='/home/jerome/miniconda3/bin/ipython3'
 # Misc
 psgrep() { ps -edf |grep --color=always -i $* ; }
 alias enw='emacs -nw'
+alias trf="tr '\001' ' | '"
+
