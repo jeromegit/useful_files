@@ -41,5 +41,7 @@ alias trf="tr '\001' ' | '"
 alias fixtags='/home/jerome/miniconda3/bin/python3  /home/jerome/miniconda3/lib/python3.9/site-packages/fixations/fix_tags.py'
 alias fixparse='/home/jerome/miniconda3/bin/python3  /home/jerome/miniconda3/lib/python3.9/site-packages/fixations/fix_parse_log.py'
 
+# git
+alias gfgr='git fetch; git rebase origin/master'
 
 
