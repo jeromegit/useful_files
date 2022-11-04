@@ -15,7 +15,7 @@ gf() { grep --color=always $* | tr "\001" \| | grep "$1"; };
 
 # history
 alias h=history
-hh() { history | grep --color=always $* ; }
+hh() { history -f | grep --color=always $* ; }
 alias hg=hh
 
 # less
