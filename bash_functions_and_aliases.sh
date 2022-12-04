@@ -7,14 +7,18 @@ export VISUAL="emacs -nw"
 export EDITOR=$VISUAL
 
 # ls the top 40 most recent files
-lh() { /bin/ls --color=tty -lt $@ | head -40 ; }
+unalias lh 2>/dev/null
+{ /bin/ls --color=tty -lt $@ | head -40 ; }
 
 # grep a FIX file it assumes that the first arg is the string to search/grep
 #  gf string_to_search [options such as -i or -v] file(s)
+unalias gf 2>/dev/null
 gf() { grep --color=always $* | tr "\001" \| | grep "$1"; };
 
 # history
 alias h=history
+alias hf='history -f'
+unalias hh 2>/dev/null
 hh() { history -f | grep --color=always $* ; }
 alias hg=hh
 
@@ -33,9 +37,11 @@ alias p3d='/home/jerome/miniconda3/bin/python3 -mpdb'
 alias ip3='/home/jerome/miniconda3/bin/ipython3'
 
 # Misc
+unalias psgrep 2>/dev/null
 psgrep() { ps -edf |grep --color=always -i $* ; }
 alias enw='emacs -nw'
 alias trf="tr '\001' ' | '"
+alias grep='grep --color=always -a'
 
 # Related to fixations
 alias fixtags='/home/jerome/miniconda3/bin/python3  /home/jerome/miniconda3/lib/python3.9/site-packages/fixations/fix_tags.py'
