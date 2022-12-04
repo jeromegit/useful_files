@@ -8,7 +8,8 @@ export EDITOR=$VISUAL
 
 # ls the top 40 most recent files
 unalias lh 2>/dev/null
-{ /bin/ls --color=tty -lt $@ | head -40 ; }
+lh { /bin/ls --color=always -lt $@ | head -40 ; }
+alias ls='/bin/ls --color=always'
 
 # grep a FIX file it assumes that the first arg is the string to search/grep
 #  gf string_to_search [options such as -i or -v] file(s)
