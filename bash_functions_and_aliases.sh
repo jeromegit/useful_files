@@ -42,7 +42,11 @@ unalias psgrep 2>/dev/null
 psgrep() { ps -edf |grep --color=always -i $* ; }
 alias enw='emacs -nw'
 alias trf="tr '\001' ' | '"
+alias trfp="tr '\001' '|'"
+alias tc=tcat.py
+alias tcc='tc `ls -1 /data/drops/core/CAP-* |tail -1`'
 alias grep='grep --color=always -a'
+
 
 # Related to fixations
 alias fixtags='/home/jerome/miniconda3/bin/python3  /home/jerome/miniconda3/lib/python3.9/site-packages/fixations/fix_tags.py'
