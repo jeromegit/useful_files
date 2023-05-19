@@ -49,8 +49,9 @@ alias grep='grep --color=always -a'
 
 
 # Related to fixations
-alias fixtags='/home/jerome/miniconda3/bin/python3  /home/jerome/miniconda3/lib/python3.9/site-packages/fixations/fix_tags.py'
-alias fixparse='/home/jerome/miniconda3/bin/python3  /home/jerome/miniconda3/lib/python3.9/site-packages/fixations/fix_parse_log.py'
+export PYTHON_PACKAAGES_PATH=`/home/jerome/miniconda3/bin/python3 -c "import site; print(site.getsitepackages()[0])"`
+alias fixtags='/home/jerome/miniconda3/bin/python3  $PYTHON_PACKAAGES_PATH/fixations/fix_tags.py'
+alias fixparse='/home/jerome/miniconda3/bin/python3  $PYTHON_PACKAAGES_PATH/site-packages/fixations/fix_parse_log.py'
 
 # git
 alias gfgr='git fetch; git rebase origin/master'
