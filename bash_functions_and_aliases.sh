@@ -20,7 +20,14 @@ gf() { grep --color=always $* | tr "\001" \| | grep "$1"; };
 alias h=history
 alias hf='history -f'
 unalias hh 2>/dev/null
-hh() { history -f | grep --color=always $* ; }
+
+# check if history accepts -f option
+history -f >& /dev/null
+if [ $? -eq 0 ]; then
+   hh() { history -f | grep --color=always $* ; }
+else
+   hh() { history | grep --color=always $* ; }
+fi
 alias hg=hh
 
 # less
@@ -33,9 +40,9 @@ alias ctl='crontab -l'
 alias ctg='crontab -l | grep --color=always -i'
 
 # Python/miniconda3
-alias p3='/home/jerome/miniconda3/bin/python3'
-alias p3d='/home/jerome/miniconda3/bin/python3 -mpdb'
-alias ip3='/home/jerome/miniconda3/bin/ipython3'
+alias p3='$HOME/miniconda3/bin/python3'
+alias p3d='$HOME/miniconda3/bin/python3 -mpdb'
+alias ip3='$HOME/miniconda3/bin/ipython3'
 
 # Misc
 unalias psgrep 2>/dev/null
@@ -49,11 +56,9 @@ alias grep='grep --color=always -a'
 
 
 # Related to fixations
-export PYTHON_PACKAGES_PATH=`/home/jerome/miniconda3/bin/python3 -c "import site; print(site.getsitepackages()[0])"`
-alias fixtags='/home/jerome/miniconda3/bin/python3  $PYTHON_PACKAGES_PATH/fixations/fix_tags.py'
-alias fixparse='/home/jerome/miniconda3/bin/python3  $PYTHON_PACKAGES_PATH/fixations/fix_parse_log.py'
+export PYTHON_PACKAGES_PATH=`$HOME/miniconda3/bin/python3 -c "import site; print(site.getsitepackages()[0])"`
+alias fixtags='$HOME/miniconda3/bin/python3  $PYTHON_PACKAGES_PATH/fixations/fix_tags.py'
+alias fixparse='$HOME/miniconda3/bin/python3  $PYTHON_PACKAGES_PATH/fixations/fix_parse_log.py'
 
 # git
 alias gfgr='git fetch; git rebase origin/master'
-
-
