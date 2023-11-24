@@ -53,6 +53,7 @@ alias trfp="tr '\001' '|'"
 alias tc=tcat.py
 alias tcc='tc `ls -1 /data/drops/core/CAP-* |tail -1`'
 alias grep='grep --color=always -a'
+alias fp='perl -MURI::Escape -e '\''$_=join(q(),<>); s/\001/|/g; print uri_escape($_)'\'' | curl -X POST -d @- http://vtraje1.nob29.loc:7878/stdin'
 
 
 # Related to fixations
