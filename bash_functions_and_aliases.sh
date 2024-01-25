@@ -60,6 +60,7 @@ alias fp='perl -MURI::Escape -e '\''$_=join(q(),<>); s/\001/|/g; print uri_escap
 export PYTHON_PACKAGES_PATH=`$HOME/miniconda3/bin/python3 -c "import site; print(site.getsitepackages()[0])"`
 alias fixtags='$HOME/miniconda3/bin/python3  $PYTHON_PACKAGES_PATH/fixations/fix_tags.py'
 alias fixparse='$HOME/miniconda3/bin/python3  $PYTHON_PACKAGES_PATH/fixations/fix_parse_log.py'
+alias fp='perl -MURI::Escape -e '\''$_=join(q(),<>); s/\001/|/g; s/\e\[[0-?]*[ -\]*[@-~]//g; print uri_escape($_)'\'' | curl -X POST -d @- http://vtraje1.nob29.loc:7878/stdin' 
 
 # git
 alias gfgr='git fetch; git rebase origin/master'
