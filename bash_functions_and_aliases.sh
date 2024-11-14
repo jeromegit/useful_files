@@ -39,10 +39,10 @@ alias cte='crontab -e'
 alias ctl='crontab -l'
 alias ctg='crontab -l | grep --color=always -i'
 
-# Python/miniconda3
-alias p3='$HOME/miniconda3/bin/python3'
-alias p3d='$HOME/miniconda3/bin/python3 -mpdb'
-alias ip3='$HOME/miniconda3/bin/ipython3'
+# Python/miniconda
+alias p3='$HOME/vminiconda/bin/python3'
+alias p3d='$HOME/vminiconda/bin/python3 -mpdb'
+alias ip3='$HOME/vminiconda/bin/ipython3'
 
 # Misc
 unalias psgrep 2>/dev/null
@@ -57,9 +57,9 @@ alias fp='perl -MURI::Escape -e '\''$_=join(q(),<>); s/\001/|/g; print uri_escap
 
 
 # Related to fixations
-# export PYTHON_PACKAGES_PATH=`$HOME/miniconda3/bin/python3 -c "import site; print(site.getsitepackages()[0])"`
-alias fixtags='$HOME/miniconda3/bin/python3  $PYTHON_PACKAGES_PATH/fixations/fix_tags.py'
-alias fixparse='$HOME/miniconda3/bin/python3  $PYTHON_PACKAGES_PATH/fixations/fix_parse_log.py'
+# export PYTHON_PACKAGES_PATH=`$HOME/vminiconda/bin/python3 -c "import site; print(site.getsitepackages()[0])"`
+alias fixtags='$HOME/vminiconda/bin/python3  $PYTHON_PACKAGES_PATH/fixations/fix_tags.py'
+alias fixparse='$HOME/vminiconda/bin/python3  $PYTHON_PACKAGES_PATH/fixations/fix_parse_log.py'
 alias fp='perl -MURI::Escape -e '\''$_=join(q(),<>); s/\001/|/g; s/\e\[[0-?]*[ -\]*[@-~]//g; print uri_escape($_)'\'' | curl -X POST -d @- http://vtraje1.nob29.loc:7878/stdin' 
 
 # git
