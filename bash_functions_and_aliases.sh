@@ -53,8 +53,8 @@ alias trfp="tr '\001' '|'"
 alias tc=tcat.py
 alias tcc='tc `ls -1 /data/drops/core/CAP-* |tail -1`'
 alias grep='grep --color=always -a'
-alias fp='perl -MURI::Escape -e '\''$_=join(q(),<>); s/\001/|/g; print uri_escape($_)'\'' | curl -X POST -d @- http://vtraje1.nob29.loc:7878/stdin'
-
+# alias fp='perl -MURI::Escape -e '\''$_=join(q(),<>); s/\001/|/g; print uri_escape($_)'\'' | curl -X POST -d @- http://vtraje1.nob29.loc:7878/stdin'
+alias fp='perl -pe '\''$_=join(q(),<>); s/\001/|/g; s/\e\[[0-?]*[ -\]*[@-~]//g; s/([^A-Za-z0-9\-_.~])/sprintf("%%%02X", ord($1))/ge; '\'' | curl -X POST -d @- http://vtraje1.nob29.loc:7878/stdin'
 
 # Related to fixations
 # export PYTHON_PACKAGES_PATH=`$HOME/vminiconda/bin/python3 -c "import site; print(site.getsitepackages()[0])"`
